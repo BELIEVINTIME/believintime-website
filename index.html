@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BELIEVINTIME | Sport & Santé</title>
+    <style>
+        /* --- RESET & VARIABLES --- */
+        :root {
+            --primary-color: #d4af37; /* Or élégant pour "Time/Belief" */
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --text-light: #f5f5f5;
+            --text-gray: #a0a0a0;
+            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- HEADER --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: rgba(18, 18, 18, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            /* Image de fond sombre (remplacer l'URL par la tienne) */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+            color: var(--text-gray);
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: #000;
+            font-weight: bold;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        /* --- SECTIONS GÉNÉRALES --- */
+        section {
+            padding: 80px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-gray);
+        }
+
+        /* --- SERVICES (GRID) --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* --- ABOUT / MISSION --- */
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+            background-color: #181818;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            border-radius: 10px;
+        }
+
+        /* --- CONTACT --- */
+        .contact {
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input, textarea {
+            padding: 15px;
+            background-color: var(--bg-card);
+            border: 1px solid #333;
+            color: white;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 40px 5%;
+            background-color: #000;
+            text-align: center;
+            color: var(--text-gray);
+            border-top: 1px solid #333;
+        }
+
+        /* --- MOBILE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav ul { display: none; } /* Pour simplifier, menu caché sur mobile pour l'instant */
+            .about { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">BelievInTime</div>
+        <nav>
+            <ul>
+                <li><a href="#concept">Le Concept</a></li>
+                <li><a href="#services">Expertises</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="btn" style="padding: 8px 20px; font-size: 0.8rem;">Rejoindre</a>
+    </header>
+
+    <section class="hero">
+        <h1>Devenez la meilleure<br>version de <span>vous-même</span></h1>
+        <p>L'alliance unique de professionnels du sport et de la santé pour éduquer, coacher et transformer votre potentiel.</p>
+        <a href="#services" class="btn">Découvrir nos programmes</a>
+    </section>
+
+    <section id="services">
+        <div class="section-title">
+            <h2>Notre Approche 360°</h2>
+            <p>Nous ne laissons rien au hasard. Tout est connecté.</p>
+        </div>
+        <div class="services-grid">
+            <div class="card">
+                <h3>Performance Sportive</h3>
+                <p>Des programmes d'entraînement sur-mesure conçus par des coachs d'élite pour maximiser vos résultats.</p>
+            </div>
+            <div class="card">
+                <h3>Suivi Santé & Kiné</h3>
+                <p>Prévention des blessures et récupération optimisée grâce à notre réseau de professionnels de santé.</p>
+            </div>
+            <div class="card">
+                <h3>Éducation & Mental</h3>
+                <p>Apprenez à gérer votre temps, votre nutrition et votre mental. "Believe in Time".</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="concept" class="about">
+        <div class="about-image"></div>
+        <div class="about-text">
+            <h2>Plus qu'une marque, un état d'esprit</h2>
+            <p><br>Chez <strong>BELIEVINTIME</strong>, nous croyons que la performance durable naît de l'équilibre. Trop souvent, le sportif est laissé seul face à ses douleurs ou ses doutes.</p>
+            <p><br>Nous rassemblons les experts (préparateurs physiques, kinés, nutritionnistes) sur une même plateforme pour vous offrir l'encadrement d'un pro, quel que soit votre niveau.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-title">
+            <h2>Prêt à passer au niveau supérieur ?</h2>
+            <p>Contactez-nous pour un bilan personnalisé ou pour rejoindre le réseau.</p>
+        </div>
+        <form>
+            <input type="text" placeholder="Votre Nom" required>
+            <input type="email" placeholder="Votre Email" required>
+            <textarea rows="5" placeholder="Votre objectif ou message..."></textarea>
+            <button type="submit" class="btn" style="border:none; width:100%;">Envoyer</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 BELIEVINTIME. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
